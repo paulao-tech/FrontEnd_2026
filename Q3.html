@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupos e Fatos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            color: #333;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        details {
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Grupos e Fatos</h1>
+
+<div class="container">
+
+    <div class="card" id="grupo1">
+        <h2 id="titulo1">🅰️ Grupo A</h2>
+        <ul id="lista1"></ul>
+        <details>
+            <summary>Saiba Mais</summary>
+            <ul id="fatos1"></ul>
+        </details>
+    </div>
+
+    <div class="card" id="grupo2">
+        <h2 id="titulo2">🅱️ Grupo B</h2>
+        <ul id="lista2"></ul>
+        <details>
+            <summary>Saiba Mais</summary>
+            <ul id="fatos2"></ul>
+        </details>
+    </div>
+
+    <div class="card" id="grupo3">
+        <h2 id="titulo3">🅲 Grupo C</h2>
+        <ul id="lista3"></ul>
+        <details>
+            <summary>Saiba Mais</summary>
+            <ul id="fatos3"></ul>
+        </details>
+    </div>
+
+</div>
+
+<button onclick="proximo()">Próximo</button>
+
+<script>
+    let pagina = 1;
+
+    function carregarGruposA() {
+        document.getElementById("titulo1").innerText = "🅰️ Grupo A";
+        document.getElementById("lista1").innerHTML = `
+            <li>México</li>
+            <li>África do Sul</li>
+            <li>Coreia do Sul</li>
+            <li>República Tcheca</li>`;
+        document.getElementById("fatos1").innerHTML = `
+            <li>O jogo de abertura será México x África do Sul.</li>
+            <li>Histórico equilibrado contra europeus.</li>`;
+
+        document.getElementById("titulo2").innerText = "🅱️ Grupo B";
+        document.getElementById("lista2").innerHTML = `
+            <li>Canadá</li>
+            <li>Suíça</li>
+            <li>Catar</li>
+            <li>Bósnia</li>`;
+        document.getElementById("fatos2").innerHTML = `
+            <li>Canadá joga em casa.</li>
+            <li>Suíça e Catar já se enfrentaram.</li>`;
+
+        document.getElementById("titulo3").innerText = "🅲 Grupo C";
+        document.getElementById("lista3").innerHTML = `
+            <li>Brasil</li>
+            <li>Marrocos</li>
+            <li>Haiti</li>
+            <li>Escócia</li>`;
+        document.getElementById("fatos3").innerHTML = `
+            <li>Grupo já existiu em 1998.</li>
+            <li>Brasil nunca perdeu para Escócia.</li>`;
+    }
+
+    function carregarGruposB() {
+        document.getElementById("titulo1").innerText = "🅳 Grupo D";
+        document.getElementById("lista1").innerHTML = `
+            <li>Estados Unidos</li>
+            <li>Paraguai</li>
+            <li>Austrália</li>
+            <li>Turquia</li>`;
+        document.getElementById("fatos1").innerHTML = `
+            <li>EUA jogam em casa.</li>
+            <li>Austrália enfrenta sul-americanos com frequência.</li>`;
+
+        document.getElementById("titulo2").innerText = "🅴 Grupo E";
+        document.getElementById("lista2").innerHTML = `
+            <li>Alemanha</li>
+            <li>Equador</li>
+            <li>Costa do Marfim</li>
+            <li>Curaçao</li>`;
+        document.getElementById("fatos2").innerHTML = `
+            <li>Alemanha domina grupos.</li>
+            <li>Equador e Costa do Marfim têm estilo físico.</li>`;
+
+        document.getElementById("titulo3").innerText = "🅵 Grupo F";
+        document.getElementById("lista3").innerHTML = `
+            <li>Holanda</li>
+            <li>Japão</li>
+            <li>Tunísia</li>
+            <li>Suécia</li>`;
+        document.getElementById("fatos3").innerHTML = `
+            <li>Equipes com estilos variados.</li>
+            <li>Confrontos imprevisíveis.</li>`;
+    }
+
+    function proximo() {
+        if (pagina === 1) {
+            carregarGruposB();
+            pagina = 2;
+        } else {
+            carregarGruposA();
+            pagina = 1;
+        }
+    }
+
+    // Carrega inicial
+    carregarGruposA();
+</script>
+
+</body>
+</html>

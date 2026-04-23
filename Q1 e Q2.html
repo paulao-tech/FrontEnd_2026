@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupos e Fatos</title>
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fundo da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            padding: 20px;
+        }
+
+        /* Cabeçalho */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Container dos cartões */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Cartões */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        /* Títulos */
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        /* Lista */
+        .card ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Details */
+        details {
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Grupos e Fatos</h1>
+
+    <div class="container">
+
+        <!-- Grupo A -->
+        <div class="card" id="grupoA">
+            <h2>🅰️ Grupo A</h2>
+
+            <h3>Seleções</h3>
+            <ul>
+                <li>México</li>
+                <li>África do Sul</li>
+                <li>Coreia do Sul</li>
+                <li>República Tcheca</li>
+            </ul>
+
+            <details>
+                <summary>Saiba Mais</summary>
+                <ul>
+                    <li>O jogo de abertura será México x África do Sul.</li>
+                    <li>Confrontos entre Coreia do Sul e seleções europeias já ocorreram em várias Copas, com histórico equilibrado.</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Grupo B -->
+        <div class="card" id="grupoB">
+            <h2>🅱️ Grupo B</h2>
+
+            <h3>Seleções</h3>
+            <ul>
+                <li>Canadá</li>
+                <li>Suíça</li>
+                <li>Catar</li>
+                <li>Vaga Europeia (Bósnia)</li>
+            </ul>
+
+            <details>
+                <summary>Saiba Mais</summary>
+                <ul>
+                    <li>O Canadá joga em casa, fator importante de desempenho.</li>
+                    <li>Catar e Suíça já se enfrentaram recentemente em amistosos internacionais.</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Grupo C -->
+        <div class="card" id="grupoC">
+            <h2>🅲 Grupo C</h2>
+
+            <h3>Seleções</h3>
+            <ul>
+                <li>Brasil</li>
+                <li>Marrocos</li>
+                <li>Haiti</li>
+                <li>Escócia</li>
+            </ul>
+
+            <details>
+                <summary>Saiba Mais</summary>
+                <ul>
+                    <li>Brasil, Marrocos e Escócia já dividiram grupo em 1998.</li>
+                    <li>O Brasil nunca perdeu para a Escócia em Copas.</li>
+                </ul>
+            </details>
+        </div>
+
+    </div>
+
+</body>
+</html>
