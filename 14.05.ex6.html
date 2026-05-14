@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Bank - Orçamento de Evento</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            width: 380px;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            text-align: center;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #111827;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 15px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #111827;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #374151;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #eef6ff;
+            color: #111827;
+            line-height: 1.7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Orçamento de Evento</h1>
+
+        <label for="pacote">Escolha o pacote</label>
+        <select id="pacote">
+            <option value="50">Standard - R$ 50,00 por pessoa</option>
+            <option value="80">Premium - R$ 80,00 por pessoa</option>
+            <option value="120">Infinity Deluxe - R$ 120,00 por pessoa</option>
+        </select>
+
+        <label for="pessoas">Quantidade de pessoas</label>
+        <input type="number" id="pessoas" min="1" placeholder="Ex: 120">
+
+        <button id="calcular">Calcular Orçamento</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        const botao = document.getElementById("calcular");
+
+        botao.addEventListener("click", function() {
+            const valorPacote = Number(document.getElementById("pacote").value);
+            const quantidadePessoas = Number(document.getElementById("pessoas").value);
+            const resultado = document.getElementById("resultado");
+
+            if (quantidadePessoas <= 0) {
+                resultado.innerHTML = "Digite uma quantidade válida de pessoas.";
+                return;
+            }
+
+            const custoBruto = valorPacote * quantidadePessoas;
+
+            const taxaServico = custoBruto * 0.10;
+
+            const valorComTaxa = custoBruto + taxaServico;
+
+            let desconto = 0;
+
+            if (quantidadePessoas > 100) {
+                desconto = valorComTaxa * 0.05;
+            }
+
+            const totalFinal = valorComTaxa - desconto;
+
+            resultado.innerHTML = `
+                Custo bruto: R$ ${custoBruto.toFixed(2)}<br>
+                Taxa de serviço: R$ ${taxaServico.toFixed(2)}<br>
+                Desconto aplicado: R$ ${desconto.toFixed(2)}<br>
+                Total final: R$ ${totalFinal.toFixed(2)}
+            `;
+        });
+    </script>
+
+</body>
+</html>
